@@ -53,6 +53,14 @@ kotlin {
                 implementation(libs.androidx.lifecycle.runtime.compose)
             }
         }
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(libs.kotlinx.coroutines.test)
+                implementation(libs.ktor.client.mock)
+                implementation(libs.multiplatform.settings.test)
+            }
+        }
         val androidMain by getting {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
