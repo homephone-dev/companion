@@ -63,7 +63,7 @@ rather than assumed):
 
 | Component | Version | Why |
 |---|---|---|
-| Kotlin | 2.2.20 | Current stable; also the version that shipped direct Swift export. |
+| Kotlin | 2.3.20 | Bumped from the originally-scaffolded 2.2.20 during first-build verification: Compose Multiplatform 1.11.0's `components-resources` klib is built with ABI version 2.3.0, which a 2.2.20 compiler cannot consume (`KLIB resolver: Skipping ... incompatible ABI version`). 2.3.20 is the version that actually produced that klib. |
 | Compose Multiplatform | 1.11.0 | Current stable JetBrains release (May 2026 blog post); iOS target has been stable since CMP 1.6 in 2025. |
 | Ktor | 3.5.2 | Current stable client version referenced in Kotlin docs as of Aug 2026. |
 | kotlinx.serialization | 1.9.0 | Paired with Kotlin 2.2.x. |

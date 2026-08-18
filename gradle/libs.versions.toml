@@ -1,6 +1,6 @@
 [versions]
 # Confirmed via WebSearch (Aug 2026) against JetBrains Kotlin blog / kotlinlang.org docs.
-kotlin = "2.2.20"
+kotlin = "2.3.20"
 composeMultiplatform = "1.11.0"
 agp = "8.7.3"
 androidCompileSdk = "35"
