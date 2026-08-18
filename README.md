@@ -16,13 +16,28 @@ project:
 
 ## Status
 
-Early scaffold, iOS-first. **No build has been verified in the environment
-this was scaffolded in** — there was no Kotlin/Gradle/Xcode toolchain
-available, so the Gradle files, Kotlin sources, and Xcode project were
-written by hand against current (as of Aug 2026) KMP/CMP documentation and
-double-checked for internal consistency, but nobody has actually run
-`./gradlew build` or opened this in Xcode yet. Treat the first build as a
-"does this actually compile" pass, not a formality.
+First build/verification pass complete (see commit history). Verified in
+this environment:
+
+- `./gradlew :composeApp:compileKotlinIosSimulatorArm64` — succeeds.
+- `./gradlew :composeApp:linkDebugFrameworkIosSimulatorArm64` — succeeds
+  (the actual iOS framework Xcode's build phase would link).
+- `./gradlew :composeApp:compileTestKotlinIosSimulatorArm64` and
+  `:composeApp:linkDebugTestIosSimulatorArm64` — succeed.
+- `iosApp/iosApp.xcodeproj/project.pbxproj` and `Info.plist` pass
+  `plutil -lint`.
+- Contacts, schedules, and multi-device CRUD are wired end-to-end in the
+  UI (create/update/delete, not just list-loading).
+
+Not verified in this environment (tooling gaps, not known code issues):
+- Actually running `:composeApp:iosSimulatorArm64Test` or opening/building
+  `iosApp.xcodeproj` in Xcode — this machine's Xcode has no iOS SDK/
+  simulator runtime installed (`xcodebuild -showsdks` lists no iOS
+  platform) and installing one requires interactive authorization not
+  available here.
+- The Android target (`:composeApp:compileDebugKotlinAndroid`,
+  `:composeApp:testDebugUnitTest`) — no Android SDK installed here; per
+  the stack decision Android follows iOS.
 
 What's real:
 - Data classes (`composeApp/.../data/model/Models.kt`) mirror the JSON
