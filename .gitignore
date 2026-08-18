@@ -1,0 +1,56 @@
+# --- Gradle / Kotlin / Android ---
+.gradle/
+**/build/
+!src/**/build/
+local.properties
+.kotlin/
+*.hprof
+captures/
+.cxx/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+out/
+
+# Gradle wrapper jar is intentionally NOT ignored — it should be committed
+# once generated via `gradle wrapper`. Only the distribution cache is ignored.
+gradle/wrapper/dists/
+
+# --- Xcode / iOS ---
+iosApp/**/build/
+iosApp/**/DerivedData/
+iosApp/**/*.xcuserstate
+iosApp/**/xcuserdata/
+iosApp/**/*.xcworkspace/xcuserdata/
+iosApp/**/*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+*.xcuserdatad/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+DerivedData/
+.build/
+Pods/
+*.xcworkspace
+!iosApp/iosApp.xcworkspace/contents.xcworkspacedata
+
+# --- Compose Multiplatform / KMP ---
+**/kotlin-js-store/
+.kotlin-native/
+
+# --- macOS ---
+.DS_Store
+
+# --- Misc editors ---
+*.swp
+*.swo
+.vscode/
